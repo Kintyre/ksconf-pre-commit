@@ -1,0 +1,21 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: (cli\.rst|\.md|\.csv)$
+    - id: end-of-file-fixer
+      exclude: (cli\.rst|\.md|\.csv)$
+    - id: check-ast
+    - id: check-added-large-files
+      args: [ '--maxkb=200' ]
+    - id: check-merge-conflict
+    - id: detect-private-key
+    - id: mixed-line-ending
+      args: [ '--fix=lf' ]
+      exclude: (\.bat|\.csv)$
+
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: v2.0.4
+  hooks:
+    - id: autopep8

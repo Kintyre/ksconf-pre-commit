@@ -1,0 +1,32 @@
+
+
+.idea
+.vscode
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.dist-info/
+.installed.cfg
+*.egg
+
+# pyenv
+.python-version
+
+# virtualenv
+.venv
+venv*/
+venv
+ENV/
+*-pyve
