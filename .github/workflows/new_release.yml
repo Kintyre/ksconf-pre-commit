@@ -1,0 +1,26 @@
+name: Repository Dispatch
+on:
+  repository_dispatch:
+    types: [bumpversion-event]
+
+jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Run version update script
+        run: |
+          echo "REF=${{ github.event.client_payload.ref }}"
+          echo "SHA=${{ github.event.client_payload.sha }}"
+
+          # Ensure git username to allow commit to occur
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email '${{ github.event.sender.id }}+${{ github.event.sender.login }}@users.noreply.github.com>'
+
+          ./new_release.sh ${{ github.event.client_payload.ref }}
+
+          # Push update commit & tags back to repo
+          git push origin main --tags
