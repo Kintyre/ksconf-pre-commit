@@ -15,6 +15,6 @@
 - id: ksconf-xml-format
   name: Ksconf Splunk CONF - Normalize XML
   description: Normalize and apply consistent XML indentation and CDATA usage for XML dashboards and navigation files.
-  entry: ksconf xml-format -q
+  entry: ksconf xml-format -q --disable-pre-commit-migration-check
   language: python
   files: data/ui/(views|nav)/[^/]+\.xml$

@@ -4,7 +4,7 @@ on:
     types: [bumpversion-event]
 
 jobs:
-  myEvent:
+  new_release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
