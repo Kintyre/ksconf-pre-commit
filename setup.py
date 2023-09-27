@@ -1,6 +1,6 @@
 from setuptools import setup
 
-ksconf_version = "0.12.0-beta2"
+ksconf_version = "0.12.0"
 
 setup(name="ksconf-pre-commit",
       version=ksconf_version,
