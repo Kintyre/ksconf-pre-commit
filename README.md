@@ -17,7 +17,7 @@ This repo provides a simple [pre-commit](https://pre-commit.com/) hook definitio
 ```yaml
 repos:
   - repo: https://github.com/Kintyre/ksconf-pre-commit
-    rev: v0.13.5
+    rev: v0.13.6
     hooks:
       - id: ksconf-check
       - id: ksconf-sort
